@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Контакты ресторана Vkusno.net</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+            background-image: url("https://gcdn.tomesto.ru/img/place/000/032/643/restoran-park-na-mantulinskoy_7dc79_full-380023.jpg");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+		h1 {
+			margin: 0;
+		}
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 20px;
+		}
+		section {
+			background-color: #f2f2f2;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			margin: 20px;
+			padding: 20px;
+			width: 300px;
+		}
+		h2 {
+			margin-top: 0;
+		}
+		p {
+			margin: 0;
+		}
+		button {
+			background-color: #333;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+			padding: 10px;
+			margin-top: 10px;
+			width: 100%;
+		}
+        footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  .da {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 200px;
+  margin-bottom: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: black;
+  padding: 15px 25px;
+  border-radius: 7px;
+}
+  header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+            padding-top: 30px;
+		}
+        header h1{
+            padding-bottom: 13px;
+        }
+        nav{
+            margin-top: 10px;
+        }
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav li {
+			display: inline-block;
+			margin-right: 20px;
+		}
+		nav a {
+			color: #D3D3D3;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Vkusno.net</h1>
+        <nav>
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">Меню</a></li>
+              <li><a href="#">Бронирование</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+	</header>
+	<main class="da">
+		<section>
+			<h2>Адрес</h2>
+			<p>ул. Пушкина, д. 10</p>
+			<p>г. Астана</p>
+			<button id="copy-address">Скопировать адрес</button>
+		</section>
+		<section>
+			<h2>Телефон</h2>
+			<p>+7 (777) 523-75-19</p>
+			<button id="call-phone">Позвонить</button>
+		</section>
+		<section>
+			<h2>Электронная почта</h2>
+			<p>Vkusnonet@gmail.com</p>
+			<button id="send-email">Написать письмо</button>
+		</section>
+	</main>
+	<script>
+		const copyAddressButton = document.getElementById('copy-address');
+		copyAddressButton.addEventListener('click', () => {
+			const address = 'ул. Пушкина, д. 10, г. Асатна';
+			navigator.clipboard.writeText(address);
+			alert('Адрес скопирован в буфер обмена!');
+		});
+
+		const callPhoneButton = document.getElementById('call-phone');
+		callPhoneButton.addEventListener('click', () => {
+			const phoneNumber = '+77775237519';
+			window.location.href = `tel:${phoneNumber}`;
+		});
+
+		const sendEmailButton = document.getElementById('send-email');
+		sendEmailButton.addEventListener('click', () => {
+			const emailAddress = 'Vkusnonet@gmail.com';
+			window.location.href = `mailto:${emailAddress}`;
+		});
+	</script>
+      <footer>
+        <p>Vkusno.net &copy; 2021</p>
+      </footer>
+</body>
+</html>
