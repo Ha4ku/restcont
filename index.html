@@ -123,17 +123,20 @@
 	<script>
 		const copyAddressButton = document.getElementById('copy-address');
 		copyAddressButton.addEventListener('click', () => {
-			const address = 'ул. Пушкина, д. 10, г. Асатна';
-			navigator.clipboard.writeText(address);
-			alert('Адрес скопирован в буфер обмена!');
+			const address = 'ул. Пушкина, д. 10, г. Астана';
+			navigator.clipboard.writeText(address).then(() => {
+				alert('Адрес скопирован в буфер обмена!');
+			}).catch((err) => {
+				console.error('Ошибка копирования в буфер обмена: ', err);
+			});
 		});
-
+	
 		const callPhoneButton = document.getElementById('call-phone');
 		callPhoneButton.addEventListener('click', () => {
 			const phoneNumber = '+77775237519';
 			window.location.href = `tel:${phoneNumber}`;
 		});
-
+	
 		const sendEmailButton = document.getElementById('send-email');
 		sendEmailButton.addEventListener('click', () => {
 			const emailAddress = 'Vkusnonet@gmail.com';
